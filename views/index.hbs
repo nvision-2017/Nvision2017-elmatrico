@@ -1,0 +1,131 @@
+  <!-- Navigation -->
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">
+                <img src="/img/font_new_recovered.png" alt="nvision logo"></img>
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#about">About</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#login">Login/Sign Up</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Intro Header -->
+<header class="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 class="brand-heading">El Dorado</h1>
+                    <p class="intro-text">22th - 25th January</p>
+                    <a href="#about" class="btn btn-circle page-scroll">
+                        <i class="fa fa-angle-double-down animated"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- About Section -->
+<section id="about" class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>El Dorado!</h2>
+            <p style="text-align: justify;">Introducing the most exciting treasure hunt of the year!! Get ready to be lost in the mansion of crypts and solve the problems to seek out the treasure. Begin your splendid journey in this amazing maze. Test your skills of logic and try your luck at connecting unrelated pictures and unearthing hidden clues!! </p>
+            
+            <p>The event starts on 22th jan. Register Below</p>
+            <p>
+              Prizes Worth : Rs. 10,000
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Login Section -->
+<section id="login" class="container content-section text-center">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2 text-center">
+        <p><i class="fa fa-envelope-o margin-40"></i></p>
+        <h2 class="black">Sign Up for Updates</h2>
+        <br />
+        <p class="black" id="joinText">Join in for updates and more info and reminders and maybe even clues ;)</p>
+        <br/>
+        <p>
+          Already Signed up? <a href="/login" class="btn btn-default btn-lg">Sign In</a>
+        </p>
+        <br/>
+
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            <form role="form" action="/signup" method="post" id="signup">
+              <div class="form-group">
+                <input type="email" data-validation="email" name="email" class="form-control" id="emailInput" placeholder="Enter Email">
+                <br>
+                <input data-validation="custom" data-validation-regexp="(\+91[\-\s]?)?\d{10}" name="number" class="form-control" id="numberInput" placeholder="Enter Phone">
+                <br>
+                <input name="college" class="form-control" id="collegeInput" placeholder="Enter College">
+                <br>                
+                <input type="password" data-validation="length" data-validation-length="min6" name="password" class="form-control" id="passwordInput" placeholder="Enter Password">
+                <br>
+                <button type="submit" id="submitButton" class="btn btn-default btn-lg" onclick="handleSubmit()">Sign Up</button>
+              </div>
+            </form>
+          </div>
+        </div><!--End Form row-->
+
+      </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 margin-20">
+        <ul class="list-inline social">
+          <li><p>Connect with us on</p></li>
+          <li><p><a href="https://twitter.com/nvisioniith"><i class="fa fa-twitter"></i></a></p></li>
+          <li><p><a href="https://www.facebook.com/nvision.IIThyderabad"><i class="fa fa-facebook"></i></a></p></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-4 text-right">
+        <p><small>Copyright &copy; 2016. All rights reserved. <br>
+          Created by <a href="http://nvision.org.in">&eta;vision 2016, IIT Hyderabad</a></small></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="js/jquery.easing.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/grayscale.js"></script>

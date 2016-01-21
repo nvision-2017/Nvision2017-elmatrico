@@ -1,0 +1,69 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="logo" href="/"><img src="img/font_new_recovered.png" alt="Logo"></a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/play">Play</a></li>
+      </ul>
+    </div><!--/.navbar-collapse -->
+  </div>
+</div>
+  <div class="container backgroungImg">
+    <div class="row">
+      <div class="col-xs-6">
+        <a href="/"><img src="img/font_new_recovered.png" alt="Logo"></a>
+      </div>
+      <div class="col-xs-6 signin text-right navbar-nav hidden-xs hidden-sm">
+        <a href="/play">Play</a>
+      </div>
+    </div>
+		<br>
+		<br>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+	      <div class="panel panel-default">
+	        <div class="panel-heading">
+	          <h4>
+	            Leaderboard
+	          </h4>
+	        </div>
+	        <table class="table table-fixed">
+	          <thead>
+	            <tr>
+	              <th class="col-xs-2">#</th><th class="col-xs-8">User Name</th><th class="col-xs-2">Level</th>
+	            </tr>
+	          </thead>
+	          <tbody>
+							{{#each users}}
+								<tr>
+									<th scope="row" class="col-xs-2">&nbsp;{{@index}}</th>
+									{{#if this.uname}}
+										<td class="col-xs-2">{{this.uname}}</td>
+									{{else}}
+										<td class="col-xs-2">{{this.emailId}}</td>
+									{{/if}}
+									<td class="col-xs-2">{{this.level}}</td>
+								</tr>
+							{{/each}}
+	          </tbody>
+	        </table>
+	      </div>
+			</div>
+	  </div>
+  </div>
+
+<!-- Javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="js/wow.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
