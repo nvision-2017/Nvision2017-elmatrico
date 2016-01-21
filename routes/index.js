@@ -122,7 +122,7 @@ router.get('/verify/:token', function(req, res, next) {
 // });
 
 router.get('/test', function(req, res, next) {
-  res.render('levels/faliure');
+  res.render('levels/success');
 });
 
 var sendConfirmation = function(user) {
