@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var cons = require('consolidate');
 var jwt = require('jsonwebtoken');
+var fs = require('fs');
+
 
 var secret = "Celestial Inquisition";
 
@@ -109,7 +111,7 @@ router.post('/ans', isAuthenticated, function(req, res, next) {
   } else {
     User.findById(req.user.id, function(err, user) {
       var l = user.level;
-      if (levels[l].answer == req.body.answer.toLowerCase()) {
+      if (req.body && req.body.answer && (levels[l].answer == req.body.answer.toLowerCase())) {
         user.level = l+1;
         user.save(function() {
           res.render('levels/success');
