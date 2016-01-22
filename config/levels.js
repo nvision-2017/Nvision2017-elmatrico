@@ -109,6 +109,9 @@ levels = [{
 		answer: "firefox", // NEEDS HINT
 		file: "firefox"
 	},{
+		answer: "john sculley", // NEEDS IMPROV
+		file: "steve"
+	},{
 		answer: "emma watson", // NEEDS IMPROV
 		file: "emma"
 	},{
