@@ -4,16 +4,16 @@ levels = [{
 		answer: "nvision",
 		file: "nvision"
 	},{
-		answer: "vlc",	//NEEDS HINT
+		answer: "vlc",
 		file: "vlc"
 	},{
-		answer: "firefox", // NEEDS HINT
+		answer: "firefox",
 		file: "firefox"
 	},{
-		answer: "john sculley", // NEEDS IMPROV
+		answer: "john sculley", // Put a flag
 		file: "steve"
 	},{
-		answer: "virgin", // NEEDS IMPROV
+		answer: "virgin",
 		file: "virgin"
 	},{
 		answer: "emma watson", // NEEDS IMPROV

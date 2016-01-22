@@ -111,7 +111,7 @@ router.post('/ans', isAuthenticated, function(req, res, next) {
     User.findById(req.user.id, function(err, user) {
       var l = user.level;
       console.log(req.body, levels[l])
-      if (levels[l].answer === req.body.answer.toLowerCase()) {
+      if (levels[l].answer == req.body.answer.toLowerCase()) {
         user.level = l+1;
         user.save(function() {
           res.render('levels/success');
