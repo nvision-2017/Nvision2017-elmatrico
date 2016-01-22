@@ -124,7 +124,7 @@ router.post('/ans', isAuthenticated, function(req, res, next) {
 });
 
 router.get('/test', function(req, res, next) {
-  res.render('levels/failure');
+  res.render('levels/victory');
 });
 
 var sendConfirmation = function(user) {
