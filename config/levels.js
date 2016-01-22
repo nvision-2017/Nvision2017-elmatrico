@@ -34,14 +34,8 @@ levels = [{
 		answer: "bean", // BEAN or MR.Bean?
 		file: "bean"
 	},{
-		answer: "jane ubrein", //Explain once again?
-		file: "jane"
-	},{
 		answer: "totem",
 		file: "totem"
-	},{
-		answer: "advaya",
-		file: "advaya"
 	},{
 		answer: "final destination",
 		file: "finald"
@@ -49,14 +43,14 @@ levels = [{
 		answer: "gangotri",
 		file: "gangotri"
 	},{
-		answer: "wilkie",
-		file: "wilkie"
-	},{
 		answer: "48988659276962496",
 		file: "taxicab"
 	},{
 		answer: "rugby",
 		file: "rugby"
+	},{
+		answer: "wilkie",
+		file: "wilkie"
 	},{
 		answer: "dagon",
 		file: "dagon"
@@ -82,6 +76,9 @@ levels = [{
 		answer: "slim shady",
 		file: "eminem"
 	},{
+		answer: "jane ubrien", //Explain once again?
+		file: "jane"
+	},{
 		answer: "enigma",
 		file: "enigma"
 	},{
@@ -93,6 +90,9 @@ levels = [{
 	},{
 		answer: "serious",
 		file: "serious"
+	},{
+		answer: "advaya",
+		file: "advaya"
 	},{
 		answer: "richard brooke",
 		file: "richard"
