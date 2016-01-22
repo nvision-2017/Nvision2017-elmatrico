@@ -98,7 +98,7 @@ router.get('/play', isAuthenticated, function(req, res, next) {
     User.findById(req.user.id, function(err, user) {
       var l = user.level;
       console.log(levels[l])
-      res.render('levels/level' + l, {level: levels[l]})
+      res.render('levels/' + levels[l], {level: levels[l]})
     });
   }
 });
