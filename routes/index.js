@@ -110,13 +110,13 @@ router.post('/ans', isAuthenticated, function(req, res, next) {
   } else {
     User.findById(req.user.id, function(err, user) {
       var l = user.level;
-      console.log(req.body, levels[l])
       if (levels[l].answer == req.body.answer.toLowerCase()) {
         user.level = l+1;
         user.save(function() {
           res.render('levels/success');
         })
       } else {
+        console.log(req.body.answer, user.level);
         res.render('levels/failure');
       }
     })
