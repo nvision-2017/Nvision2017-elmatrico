@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var RedisStore = require('connect-redis')(session);
+
 
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
@@ -32,9 +34,15 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+var options = {
+  host: '127.0.0.1',
+  port: '6379'
+}
+
 // required for passport
 app.use(session({
   secret: 'Celestial Inquisition',
+  store: new RedisStore(options),
   resave: true
 })); // session secret
 app.use(passport.initialize());
