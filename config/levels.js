@@ -10,55 +10,55 @@ levels = [{
 		answer: "firefox",
 		file: "firefox"
 	},{
-		answer: "dagon",
-		file: "dagon"
-	},{
 		answer: "john sculley", // Put a flag
 		file: "steve"
 	},{
 		answer: "virgin",
 		file: "virgin"
 	},{
-		answer: "emma watson", // NEEDS IMPROV
+		answer: "emma watson",
 		file: "emma"
 	},{
 		answer: "vespa",
 		file: "vespa"
 	},{
-		answer: "pink floyd", // NEEDS HINT
+		answer: "pink floyd", // NEEDS HINT?
 		file: "pink1"
 	},{
-		answer: "alex karpovsky", // NEEDS HINT
+		answer: "alex karpovsky", // NEEDS HINT?
 		file: "alex"
 	},{
 		answer: "anagram",
 		file: "anagram"
 	},{
-		answer: "bean", // BEAN or MR.Bean?
+		answer: "bean", // BEAN // Needs hint
 		file: "bean"
 	},{
 		answer: "bryan adams",
 		file: "bryan"
 	},{
-		answer: "totem",
+		answer: "totem",	// Totem // NEEDS HINT
 		file: "totem"
 	},{
-		answer: "final destination",
+		answer: "final destination",	
 		file: "finald"
 	},{
 		answer: "gangotri",
 		file: "gangotri"
 	},{
-		answer: "48988659276962496",
+		answer: "48988659276962496",	// HINT??
 		file: "taxicab"
 	},{
-		answer: "rugby",
+		answer: "dagon",
+		file: "dagon"
+	},{
+		answer: "rugby", /// MAkes sense
 		file: "rugby"
 	},{
-		answer: "wilkie",
+		answer: "wilkie",	// HINT NEEDED
 		file: "wilkie"
 	},{
-		answer: "neil degrasse tyson",
+		answer: "neil degrasse tyson",	// 
 		file: "titanic"
 	},{
 		answer: "iupac",
@@ -94,13 +94,13 @@ levels = [{
 		answer: "advaya",
 		file: "advaya"
 	},{
-		answer: "richard brooke",
+		answer: "richard brooke",	// FIX third pic
 		file: "richard"
 	},{
-		answer: "neil armstrong",
+		answer: "neil armstrong",	// Fix audio
 		file: "audio"
 	},{
-		answer: "chandra x laboratory"
+		answer: "chandra x laboratory" // Add victor page
 	}];
 
 module.exports = levels;
