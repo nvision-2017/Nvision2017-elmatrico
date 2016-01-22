@@ -28,7 +28,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/leaderboard', function(req, res, next) {
-  User.find({}).sort([['level', -1], ['UpdatedAt', 1]]).exec(function(err, users) {
+  User.find({}).sort([['level', -1], ['updatedAt', 1]]).exec(function(err, users) {
     res.render('leaderboard', {users: users});
   })
 });
