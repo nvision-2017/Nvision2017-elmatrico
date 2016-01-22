@@ -28,6 +28,9 @@ levels = [{
 		answer: "alex karpovsky", // NEEDS HINT?
 		file: "alex"
 	},{
+		answer: "totem",	// Totem // NEEDS HINT
+		file: "totem"
+	},{
 		answer: "anagram",
 		file: "anagram"
 	},{
