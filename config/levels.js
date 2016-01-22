@@ -1,57 +1,98 @@
 var levels = {
 	1: {
-		name: "1 Aries",
-		image: "https://s3-ap-southeast-1.amazonaws.com/nvision/ci/one",
-		answer: "binary star"
+		answer: "nvision"
 	},
 	2: {
-		name: "2 Taurus",
-		image: "https://s3-ap-southeast-1.amazonaws.com/nvision/ci/gsl",
-		answer: "event horizon"
+		answer: "vlc"	//NEEDS HINT
 	},
 	3: {
-		name: "3 Gemini",
-		image: "https://s3-ap-southeast-1.amazonaws.com/nvision/ci/bdjj",
-		answer: "gamma rays"
+		answer: "firefox" // NEEDS HINT
 	},
 	4: {
-		name: "4 Cancer",
-		image: "https://s3-ap-southeast-1.amazonaws.com/nvision/ci/zdf",
-		answer: "big dipper"
+		answer: "vespa"
 	},
 	5: {
-		name: "5 Leo",
-		image: "https://s3-ap-southeast-1.amazonaws.com/nvision/ci/mdl",
-		answer: "aurora"
+		answer: "pink floyd" // NEEDS HINT
 	},
 	6: {
-		name: "6 Virgo",
-		image: "https://s3-ap-southeast-1.amazonaws.com/nvision/ci/kfbl",
-		answer: "blue moon"
+		answer: "pink floyd" // NEEDS A Q
 	},
 	7: {
-		name: "7 Libra",
-		image: "https://s3-ap-southeast-1.amazonaws.com/nvision/ci/kfz",
-		answer: "cepheid"
+		answer: "anagram"
 	},
 	8: {
-		name: "8 Scorpius",
-		image: "https://s3-ap-southeast-1.amazonaws.com/nvision/ci/xlfkjx",
-		answer: "venus"
+		answer: "emma watson" // NEEDS IMPROV
 	},
 	9: {
-		name: "9 Saggitaurius",
-		image: "https://s3-ap-southeast-1.amazonaws.com/nvision/ci/xzbbkgzfkljx",
-		answer: "astronomical unit"
+		answer: "bean" // BEAN or MR.Bean?
 	},
 	10: {
-		name: "10 Capriconus",
-		image: "https://s3-ap-southeast-1.amazonaws.com/nvision/ci/zlfkljx",
-		answer: "gravitational lensing"
+		answer: "jane ubrein" //Explain once again?
 	},
 	11: {
-		name: "11 Aquarius",
-		image: "https://s3-ap-southeast-1.amazonaws.com/nvision/ci/zajafkjs",
+		answer: "totem"
+	},
+	12: {
+		answer: "advaya"
+	},
+	13: {
+		answer: "final destination"
+	},
+	14: {
+		answer: "gangotri"
+	},
+	15: {
+		answer: "wilkie"
+	},
+	16: {
+		answer: "48988659276962496"
+	},
+	17: {
+		answer: "rugby"
+	},
+	18: {
+		answer: "dagon"
+	},
+	19: {
+		answer: "neil degrasse tyson"
+	},
+	20: {
+		answer: "iupac"
+	},
+	21: {
+		answer: "tvf pitchers"
+	},
+	22: {
+		answer: "thomas young"
+	},
+	23: {
+		answer: "bryan adams"
+	},
+	24: {
+		answer: "japan"
+	},
+	25: {
+		answer: "eminem"
+	},
+	26: {
+		answer: "enigma"
+	},
+	27: {
+		answer: "jaane tu... ya jaane na"
+	},
+	28: {
+		answer: "clyde"
+	},
+	29: {
+		answer: "serious"
+	},
+	30: {
+		answer: "richard brooke"
+	},
+	31: {
+		answer: "chandra x laboratory"
+	},
+	32: {
 		answer: "chandra x laboratory"
 	}
 }

@@ -25,11 +25,11 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-// router.get('/leaderboard', function(req, res, next) {
-//   User.find({}).sort([['level', -1], ['UpdatedAt', -1]]).exec(function(err, users) {
-//     res.render('leaderboard', {users: users});
-//   })
-// });
+router.get('/leaderboard', function(req, res, next) {
+  User.find({}).sort([['level', -1], ['UpdatedAt', -1]]).exec(function(err, users) {
+    res.render('leaderboard', {users: users});
+  })
+});
 
 router.get('/ripsteve', function(req, res, next) {
   User.find({}).exec(function(err, users) {
@@ -50,7 +50,7 @@ router.get('/login', function(req, res, next) {
 });
 
 router.get('/profile', isAuthenticated, function(req, res, next) {
-  res.render('profile')
+  res.render('profile', {uname: req.user.uname})
 });
 
 router.get('/verify/:token', function(req, res, next) {
@@ -68,61 +68,63 @@ router.get('/verify/:token', function(req, res, next) {
   });
 });
 
-// router.post('/uname', isAuthenticated, function(req, res, next) {
-//   if (!req.body.uname) {
-//     req.session.wronguname = true
-//     res.redirect('/profile')
-//   } else {
-//     User.findOne({uname: req.body.uname}, function(err, user) {
-//       if (user) {
-//         req.session.wronguname = true
-//         res.redirect('/profile')
-//       } else {
-//         User.findOne({emailId: req.user.emailId}, function(err, user) {
-//           user.uname = req.body.uname;
-//           user.save(function(err) {
-//             res.redirect('/profile')
-//           })
-//         })
-//       }
-//     })
-//   }
-// });
+router.post('/uname', isAuthenticated, function(req, res, next) {
+  console.log(req.body)
+  if (!req.body.uname) {
+    req.session.wronguname = true
+    res.redirect('/profile')
+  } else {
+    User.findOne({uname: req.body.uname}, function(err, user) {
+      if (user) {
+        req.session.wronguname = true
+        res.redirect('/profile')
+      } else {
+        User.findOne({emailId: req.user.emailId}, function(err, user) {
+          user.uname = req.body.uname;
+          user.save(function(err) {
+            res.redirect('/profile')
+          })
+        })
+      }
+    })
+  }
+});
 
-// router.get('/play', isAuthenticated, function(req, res, next) {
-//   if (!req.user.uname) {
-//     req.session.wronguname = true
-//     res.redirect('/profile')
-//   } else {
-//     User.findById(req.user.id, function(err, user) {
-//       var l = user.level;
-//       console.log(levels[l])
-//       res.render('play', {level: levels[l]})
-//     })
-//   }
-// });
+router.get('/play', isAuthenticated, function(req, res, next) {
+  if (!req.user.uname) {
+    req.session.wronguname = true
+    res.redirect('/profile')
+  } else {
+    User.findById(req.user.id, function(err, user) {
+      var l = user.level;
+      console.log(levels[l])
+      res.render('levels/level' + l, {level: levels[l]})
+    });
+  }
+});
 
-// router.post('/ans', isAuthenticated, function(req, res, next) {
-//   if (!req.user.uname) {
-//     req.session.wronguname = true
-//     res.redirect('/profile')
-//   } else {
-//     User.findById(req.user.id, function(err, user) {
-//       var l = user.level;
-//       if (levels[l].answer == req.body.answer.toLowerCase()) {
-//         user.level = l+1;
-//         user.save(function() {
-//           res.redirect('/play')
-//         })
-//       } else {
-//         res.render('play', {level: levels[l]})
-//       }
-//     })
-//   }
-// });
+router.post('/ans', isAuthenticated, function(req, res, next) {
+  if (!req.user.uname) {
+    req.session.wronguname = true
+    res.redirect('/profile')
+  } else {
+    User.findById(req.user.id, function(err, user) {
+      var l = user.level;
+      console.log(req.body, levels[l])
+      if (levels[l].answer === req.body.answer.toLowerCase()) {
+        user.level = l+1;
+        user.save(function() {
+          res.render('levels/success');
+        })
+      } else {
+        res.render('levels/failure');
+      }
+    })
+  }
+});
 
 router.get('/test', function(req, res, next) {
-  res.render('levels/success');
+  res.render('levels/failure');
 });
 
 var sendConfirmation = function(user) {

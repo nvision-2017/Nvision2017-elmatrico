@@ -12,7 +12,7 @@ var LocalStrategy = require('passport-local').Strategy;
 require('./config/passport')(passport);
 
 var mongoose = require('mongoose');
-//mongoose.connect("mongodb://localhost/ci");
+mongoose.connect("mongodb://localhost/ci");
 
 var routes = require('./routes/index');
 

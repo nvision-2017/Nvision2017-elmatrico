@@ -31,12 +31,39 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
             <h2>Yo!</h2>
-            <p>Thanks for signing up. The event starts 22th January</p>
-            <p>We will inform you when the event is about to start. Until Then, sit back, relax and enjoy the show :P! </p>
-            <p>Conmplete details are below</p>
-            <a href="#about" class="btn btn-circle page-scroll">
-              <i class="fa fa-angle-double-down animated"></i>
-            </a>
+            <p>The event starts 22th January</p>
+            {{#if uname}}
+                <p class="lead wow fadeIn" data-wow-delay="0.5s">Hey, {{uname}}! The game is on :D</p>
+                <a href="/play"><button type="submit" class="btn btn-primary btn-lg">Lets Hunt Some stars</button></a>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            {{else}}
+                <p class="lead wow fadeIn" data-wow-delay="0.5s">Choose your username to get started</p>
+                <br />
+                <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                  {{#if wronguname}}
+                    <div class="alert alert-danger" role="alert">Username has already been taken or is invalid, please try again</div>
+                  {{/if}}
+                  <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                      <form role="form" method="post" action="/uname">
+                        <div class="form-group">
+                          <input type="text" name="uname" class="form-control" placeholder="Enter Username">
+                          <br>
+                          <button type="submit" id="submitButton" class="btn btn-primary btn-lg">Go!</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div><!--End Form row-->
+                </div>
+              </div>
+            {{/if}}
+
         </div>
     </div>
 </section>

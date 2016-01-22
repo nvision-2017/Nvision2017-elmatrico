@@ -1,17 +1,3 @@
-<style>
-
-.row-cen {
-    text-align:center;
-    margin-top: 3em;
-}
-
-.col-cen {
-    display:inline-block;
-    float:none;
-}
-    
-</style>
-
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
@@ -41,17 +27,27 @@
       </div>
     </div>
 
-      <div class="row row-cen">
-        <div class="col-lg-4 col-cen">
-                <img src="/img/levels/stop.png" height="100%" width="100%" style="border-radius:0.3em;">
+    <div class="row">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" style="text-align:center;margin-top:0em;">
+            <legend style="font-size:300%;padding-top:1em;">Not yet decided</legend>
+                <img src="/img/levels/E01.JPG" height="85%" width="85%" style="border-radius:0.3em;">
+          <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                
+              <form role="form" method="post" action="/ans" style="margin-top:1em;">
+                <div class="input-group">
+                <input type="text" name="answer" class="form-control" placeholder="Answer">
+                <span class="input-group-btn">
+                  <button type="submit" class="btn btn-primary" type="button">Go!</button>
+                </span>
+              </div><!-- /input-group -->
+              </form>
+            </div>
+          </div>
         </div>
-        <div class="col-lg-4 col-cen" style="text-align:left;margin-top:3em;">
-            <p style="color:red;font-size:300%;"><b>&emsp;&nbsp;Stop!</b></p><p style="font-size:200%;">You got it wrong&nbsp;<img src="https://treyschnarrbooks.files.wordpress.com/2015/07/shocked-emoji.png" height="50em" width="50em">
-</p>
-            <a href="#">&emsp;&emsp;&emsp;&emsp;<img src="http://cormack.uwaterloo.ca/abademo/120218TryAgain.png" height="30%" width="30%"></a>
-        </div>  
-        
       </div>
+    </div>
   </div>
 </header>
 
