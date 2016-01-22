@@ -101,97 +101,97 @@ levels = [{
 					// EMPTY COZ we start from 1
 	},{
 		answer: "nvision",
-		file: "nvision.hbs"
+		file: "nvision"
 	},{
 		answer: "vlc",	//NEEDS HINT
-		file: "vlc.hbs"
+		file: "vlc"
 	},{
 		answer: "firefox", // NEEDS HINT
-		file: "firefox.hbs"
+		file: "firefox"
 	},{
 		answer: "emma watson", // NEEDS IMPROV
-		file: "emma.hbs"
+		file: "emma"
 	},{
 		answer: "vespa",
-		file: "vespa.hbs"
+		file: "vespa"
 	},{
 		answer: "pink floyd", // NEEDS HINT
-		file: "pink1.hbs"
+		file: "pink1"
 	},{
 		answer: "pink floyd", // NEEDS A Q
-		file: "pink2.hbs"
+		file: "pink2"
 	},{
 		answer: "anagram",
-		file: "anagram.hbs"
+		file: "anagram"
 	},{
 		answer: "bean", // BEAN or MR.Bean?
-		file: "bean.hbs"
+		file: "bean"
 	},{
 		answer: "jane ubrein", //Explain once again?
-		file: "jane.hbs"
+		file: "jane"
 	},{
 		answer: "totem",
-		file: "totem.hbs"
+		file: "totem"
 	},{
 		answer: "advaya",
-		file: "advaya.hbs"
+		file: "advaya"
 	},{
 		answer: "final destination",
-		file: "finald.hbs"
+		file: "finald"
 	},{
 		answer: "gangotri",
-		file: "gangotri.hbs"
+		file: "gangotri"
 	},{
 		answer: "wilkie",
-		file: "wilkie.hbs"
+		file: "wilkie"
 	},{
 		answer: "48988659276962496",
-		file: "taxicab.hbs"
+		file: "taxicab"
 	},{
 		answer: "rugby",
-		file: "rugby.hbs"
+		file: "rugby"
 	},{
 		answer: "dagon",
-		file: "dagon.hbs"
+		file: "dagon"
 	},{
 		answer: "neil degrasse tyson",
-		file: "titanic.hbs"
+		file: "titanic"
 	},{
 		answer: "iupac",
-		file: "iupac.hbs"
+		file: "iupac"
 	},{
 		answer: "tvf pitchers",
-		file: "tvf.hbs"
+		file: "tvf"
 	},{
 		answer: "thomas young",
-		file: "duality.hbs"
+		file: "duality"
 	},{
 		answer: "bryan adams",
-		file: "bryan.hbs"
+		file: "bryan"
 	},{
 		answer: "japan",
-		file: "japan.hbs"
+		file: "japan"
 	},{
 		answer: "slim shady",
-		file: "eminem.hbs"
+		file: "eminem"
 	},{
 		answer: "enigma",
-		file: "enigma.hbs"
+		file: "enigma"
 	},{
 		answer: "imran khan",
-		file: "imran.hbs"
+		file: "imran"
 	},{
 		answer: "clyde",
-		file: "clyde.hbs"
+		file: "clyde"
 	},{
 		answer: "serious",
-		file: "serious.hbs"
+		file: "serious"
 	},{
 		answer: "richard brooke",
-		file: "richard.hbs"
+		file: "richard"
 	},{
 		answer: "chandra x laboratory",
-		file: "audio.hbs"
+		file: "audio"
 	},{
 		answer: "chandra x laboratory"
 	}];
