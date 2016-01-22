@@ -117,7 +117,9 @@ router.post('/ans', isAuthenticated, function(req, res, next) {
           res.render('levels/success');
         })
       } else {
-        console.log(req.body.answer, user.level);
+        if (req.body && req.body.answer) {
+          fs.appendFile('level'+user.level+'.txt', req.body.answer+'\n', function(err){})
+        }
         res.render('levels/failure');
       }
     })
