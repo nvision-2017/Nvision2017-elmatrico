@@ -10,6 +10,9 @@ levels = [{
 		answer: "firefox",
 		file: "firefox"
 	},{
+		answer: "dagon",
+		file: "dagon"
+	},{
 		answer: "john sculley", // Put a flag
 		file: "steve"
 	},{
@@ -34,6 +37,9 @@ levels = [{
 		answer: "bean", // BEAN or MR.Bean?
 		file: "bean"
 	},{
+		answer: "bryan adams",
+		file: "bryan"
+	},{
 		answer: "totem",
 		file: "totem"
 	},{
@@ -52,9 +58,6 @@ levels = [{
 		answer: "wilkie",
 		file: "wilkie"
 	},{
-		answer: "dagon",
-		file: "dagon"
-	},{
 		answer: "neil degrasse tyson",
 		file: "titanic"
 	},{
@@ -66,9 +69,6 @@ levels = [{
 	},{
 		answer: "thomas young",
 		file: "duality"
-	},{
-		answer: "bryan adams",
-		file: "bryan"
 	},{
 		answer: "japan",
 		file: "japan"
@@ -97,7 +97,7 @@ levels = [{
 		answer: "richard brooke",
 		file: "richard"
 	},{
-		answer: "chandra x laboratory",
+		answer: "neil armstrong",
 		file: "audio"
 	},{
 		answer: "chandra x laboratory"
