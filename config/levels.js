@@ -100,67 +100,98 @@
 levels = [{
 					// EMPTY COZ we start from 1
 	},{
-		answer: "nvision"
+		answer: "nvision",
+		file: "nvision.hbs"
 	},{
-		answer: "vlc"	//NEEDS HINT
+		answer: "vlc",	//NEEDS HINT
+		file: "vlc.hbs"
 	},{
-		answer: "firefox" // NEEDS HINT
+		answer: "firefox", // NEEDS HINT
+		file: "firefox.hbs"
 	},{
-		answer: "emma watson" // NEEDS IMPROV
+		answer: "emma watson", // NEEDS IMPROV
+		file: "emma.hbs"
 	},{
-		answer: "vespa"
+		answer: "vespa",
+		file: "vespa.hbs"
 	},{
-		answer: "pink floyd" // NEEDS HINT
+		answer: "pink floyd", // NEEDS HINT
+		file: "pink1.hbs"
 	},{
-		answer: "pink floyd" // NEEDS A Q
+		answer: "pink floyd", // NEEDS A Q
+		file: "pink2.hbs"
 	},{
-		answer: "anagram"
+		answer: "anagram",
+		file: "anagram.hbs"
 	},{
-		answer: "bean" // BEAN or MR.Bean?
+		answer: "bean", // BEAN or MR.Bean?
+		file: "bean.hbs"
 	},{
-		answer: "jane ubrein" //Explain once again?
+		answer: "jane ubrein", //Explain once again?
+		file: "jane.hbs"
 	},{
-		answer: "totem"
+		answer: "totem",
+		file: "totem.hbs"
 	},{
-		answer: "advaya"
+		answer: "advaya",
+		file: "advaya.hbs"
 	},{
-		answer: "final destination"
+		answer: "final destination",
+		file: "finald.hbs"
 	},{
-		answer: "gangotri"
+		answer: "gangotri",
+		file: "gangotri.hbs"
 	},{
-		answer: "wilkie"
+		answer: "wilkie",
+		file: "wilkie.hbs"
 	},{
-		answer: "48988659276962496"
+		answer: "48988659276962496",
+		file: "taxicab.hbs"
 	},{
-		answer: "rugby"
+		answer: "rugby",
+		file: "rugby.hbs"
 	},{
-		answer: "dagon"
+		answer: "dagon",
+		file: "dagon.hbs"
 	},{
-		answer: "neil degrasse tyson"
+		answer: "neil degrasse tyson",
+		file: "titanic.hbs"
 	},{
-		answer: "iupac"
+		answer: "iupac",
+		file: "iupac.hbs"
 	},{
-		answer: "tvf pitchers"
+		answer: "tvf pitchers",
+		file: "tvf.hbs"
 	},{
-		answer: "thomas young"
+		answer: "thomas young",
+		file: "duality.hbs"
 	},{
-		answer: "bryan adams"
+		answer: "bryan adams",
+		file: "bryan.hbs"
 	},{
-		answer: "japan"
+		answer: "japan",
+		file: "japan.hbs"
 	},{
-		answer: "eminem"
+		answer: "slim shady",
+		file: "eminem.hbs"
 	},{
-		answer: "enigma"
+		answer: "enigma",
+		file: "enigma.hbs"
 	},{
-		answer: "imran khan"
+		answer: "imran khan",
+		file: "imran.hbs"
 	},{
-		answer: "clyde"
+		answer: "clyde",
+		file: "clyde.hbs"
 	},{
-		answer: "serious"
+		answer: "serious",
+		file: "serious.hbs"
 	},{
-		answer: "richard brooke"
+		answer: "richard brooke",
+		file: "richard.hbs"
 	},{
-		answer: "chandra x laboratory"
+		answer: "chandra x laboratory",
+		file: "audio.hbs"
 	},{
 		answer: "chandra x laboratory"
 	}];
