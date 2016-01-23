@@ -40,9 +40,6 @@ levels = [{
 		answer: "bryan adams",
 		file: "bryan"
 	},{
-		answer: "totem",	// Totem // NEEDS HINT
-		file: "totem"
-	},{
 		answer: "final destination",	
 		file: "finald"
 	},{
