@@ -100,7 +100,8 @@ levels = [{
 		answer: "neil armstrong",	// Fix audio
 		file: "audio"
 	},{
-		answer: "chandra x laboratory" // Add victor page
+		answer: "This aint no answer :P:P:P:P:P:P:P:P:P:P:P:P::P:P:P:P:P Mothafucka.", // Add victor page
+		file: "victory"
 	}];
 
 module.exports = levels;
