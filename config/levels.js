@@ -76,9 +76,6 @@ levels = [{
 		answer: "slim shady",
 		file: "eminem"
 	},{
-		answer: "jane ubrien", //Explain once again?
-		file: "jane"
-	},{
 		answer: "enigma",
 		file: "enigma"
 	},{
@@ -90,9 +87,6 @@ levels = [{
 	},{
 		answer: "serious",
 		file: "serious"
-	},{
-		answer: "advaya",
-		file: "advaya"
 	},{
 		answer: "richard brooke",	// FIX third pic
 		file: "richard"
