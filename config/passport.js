@@ -1,8 +1,11 @@
 var cons = require('consolidate');
 var jwt = require('jsonwebtoken');
 
-var mandrill = require('mandrill-api/mandrill');
-var mandrill_client = new mandrill.Mandrill('AWqXfiPp1NT6p8_gcTF4mw');
+var SparkPost = require('sparkpost');
+var client = new SparkPost('5af0794fc5e3cbffac0de9bacea2b8e13759f824');
+
+// var mandrill = require('mandrill-api/mandrill');
+// var mandrill_client = new mandrill.Mandrill('AWqXfiPp1NT6p8_gcTF4mw');
 
 var secret = "Celestial Inquisition";
 
@@ -11,44 +14,62 @@ var sendConfirmation = function(user) {
 	cons.handlebars('views/mail.htm', {
 		link: "http://eldorado.nvision.org.in/verify/" + token
 	}, function(err, html) {
-		var message = {
-			"html": html,
-			"subject": "Confirm Email: El Dorado!",
-			"from_email": "no_reply@nvision.org.in",
-			"from_name": "Nvision, IITH",
-			"to": [{
-				"email": user.emailId,
-				"type": "to"
-			}],
-			"headers": {
-				"Reply-To": "nvision@iith.ac.in"
+		client.transmissions.send({
+			content: {
+				from: 'no_reply@nvision.org.in',
+				subject: 'Confirm Email: El Dorado!',
+				html: html
 			},
-			"important": false,
-			"track_opens": null,
-			"track_clicks": null,
-			"auto_text": null,
-			"auto_html": null,
-			"inline_css": null,
-			"url_strip_qs": null,
-			"preserve_recipients": null,
-			"view_content_link": null,
-			"tracking_domain": null,
-			"signing_domain": null,
-			"return_path_domain": null,
-			"merge": false,
-			"tags": [],
-			"subaccount": "gouthamve"
-		};
-		var async = false;
-		var ip_pool = "Main Pool";
-		mandrill_client.messages.send({
-			"message": message,
-			"async": async
-		}, function(result) {
-			console.log(result);
-		}, function(e) {
-			console.log('A mandrill error occurred: ' + e.name + ' - ' + e.message);
+			recipients: [
+				{
+					address: user.emailId
+				}
+			]
+		})
+		.then(data=>{
+			console.log('Mail Sent', data)
+		})
+		.catch(err=>{
+			console.log('Mail Error', err)
 		});
+		// var message = {
+		// 	"html": html,
+		// 	"subject": "Confirm Email: El Dorado!",
+		// 	"from_email": "no_reply@nvision.org.in",
+		// 	"from_name": "Nvision, IITH",
+		// 	"to": [{
+		// 		"email": user.emailId,
+		// 		"type": "to"
+		// 	}],
+		// 	"headers": {
+		// 		"Reply-To": "nvision@iith.ac.in"
+		// 	},
+		// 	"important": false,
+		// 	"track_opens": null,
+		// 	"track_clicks": null,
+		// 	"auto_text": null,
+		// 	"auto_html": null,
+		// 	"inline_css": null,
+		// 	"url_strip_qs": null,
+		// 	"preserve_recipients": null,
+		// 	"view_content_link": null,
+		// 	"tracking_domain": null,
+		// 	"signing_domain": null,
+		// 	"return_path_domain": null,
+		// 	"merge": false,
+		// 	"tags": [],
+		// 	"subaccount": "gouthamve"
+		// };
+		// var async = false;
+		// var ip_pool = "Main Pool";
+		// mandrill_client.messages.send({
+		// 	"message": message,
+		// 	"async": async
+		// }, function(result) {
+		// 	console.log(result);
+		// }, function(e) {
+		// 	console.log('A mandrill error occurred: ' + e.name + ' - ' + e.message);
+		// });
 	});
 }
 

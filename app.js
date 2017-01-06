@@ -14,7 +14,7 @@ var LocalStrategy = require('passport-local').Strategy;
 require('./config/passport')(passport);
 
 var mongoose = require('mongoose');
-mongoose.connect("mongodb://localhost/ci");
+mongoose.connect("mongodb://localhost/onlinegame");
 
 var routes = require('./routes/index');
 
@@ -51,7 +51,7 @@ app.use(passport.session()); // persistent login sessions
 app.use('/', routes);
 
 app.post('/signup', passport.authenticate('local-signup', {
-  successRedirect: '/', // redirect to the secure profile section
+  successRedirect: '/profile', // redirect to the secure profile section
   failureRedirect: '/' // redirect back to the signup page if there is an error
 }));
 

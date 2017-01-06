@@ -7,9 +7,6 @@ var fs = require('fs');
 
 var secret = "Celestial Inquisition";
 
-var mandrill = require('mandrill-api/mandrill');
-var mandrill_client = new mandrill.Mandrill('AWqXfiPp1NT6p8_gcTF4mw');
-
 var User = require('../models/user');
 
 var levels = require('../config/levels');
@@ -129,52 +126,5 @@ router.post('/ans', isAuthenticated, function(req, res, next) {
 router.get('/test', function(req, res, next) {
   res.render('levels/victory');
 });
-
-var sendConfirmation = function(user) {
-  var token = jwt.sign(user, secret);
-  cons.handlebars('views/mail.htm', {
-    link: "http://eldorado.nvision.org.in/verify/" + token
-  }, function(err, html) {
-    var message = {
-      "html": html,
-      "subject": "Confirm Email: El Dorado!",
-      "from_email": "no_reply@nvision.org.in",
-      "from_name": "Nvision, IITH",
-      "to": [{
-        "email": user.emailId,
-        "type": "to"
-      }],
-      "headers": {
-        "Reply-To": "nvision@iith.ac.in"
-      },
-      "important": false,
-      "track_opens": null,
-      "track_clicks": null,
-      "auto_text": null,
-      "auto_html": null,
-      "inline_css": null,
-      "url_strip_qs": null,
-      "preserve_recipients": null,
-      "view_content_link": null,
-      "tracking_domain": null,
-      "signing_domain": null,
-      "return_path_domain": null,
-      "merge": false,
-      "tags": [],
-      "subaccount": "gouthamve"
-    };
-    var async = false;
-    var ip_pool = "Main Pool";
-    mandrill_client.messages.send({
-      "message": message,
-      "async": async
-    }, function(result) {
-      console.log(result);
-    }, function(e) {
-      console.log('A mandrill error occurred: ' + e.name + ' - ' + e.message);
-    });
-  });
-}
-
 
 module.exports = router;
