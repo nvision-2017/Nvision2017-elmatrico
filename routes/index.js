@@ -19,6 +19,34 @@ var isAuthenticated = function(req, res, next) {
   }
 }
 
+function signinSSO(req, res, next) {
+    if (req.query.token) {
+        jwt.verify(req.query.token, tokenSecret, (err, decoded)=>{
+            if (!err) {
+                var user = decoded.user;
+                req.session.regenerate(function () {
+                    req.user = user;
+                    req.session.userId = user._id;
+                    // if the user has a password set, store a persistence cookie to resume sessions
+                    if (keystone.get('cookie signin') && user.password) {
+                        var userToken = user._id + ':' + hash(user.password);
+                        var cookieOpts = _.defaults({}, keystone.get('cookie signin options'), {
+                            signed: true,
+                            httpOnly: true,
+                            maxAge: 10 * 24 * 60 * 60,
+                        });
+                        res.cookie('keystone.uid', userToken, cookieOpts);
+                        console.log(userToken);
+                    }
+                    return next();
+                });
+            }
+            else next();
+        });
+    }
+    else next();
+};
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index');
