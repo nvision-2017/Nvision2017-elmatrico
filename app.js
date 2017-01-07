@@ -1,3 +1,4 @@
+require('dotenv').config();
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -8,10 +9,10 @@ var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
 
 
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
+// var passport = require('passport');
+// var LocalStrategy = require('passport-local').Strategy;
 
-require('./config/passport')(passport);
+// require('./config/passport')(passport);
 
 var mongoose = require('mongoose');
 mongoose.connect("mongodb://localhost/onlinegame");
@@ -45,20 +46,20 @@ app.use(session({
   store: new RedisStore(options),
   resave: true
 })); // session secret
-app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
+// app.use(passport.initialize());
+// app.use(passport.session()); // persistent login sessions
 
 app.use('/', routes);
 
-app.post('/signup', passport.authenticate('local-signup', {
-  successRedirect: '/profile', // redirect to the secure profile section
-  failureRedirect: '/' // redirect back to the signup page if there is an error
-}));
+// app.post('/signup', passport.authenticate('local-signup', {
+//   successRedirect: '/profile', // redirect to the secure profile section
+//   failureRedirect: '/' // redirect back to the signup page if there is an error
+// }));
 
-app.post('/login', passport.authenticate('local-login', {
-  successRedirect: '/profile', // redirect to the secure profile section
-  failureRedirect: '/login' // redirect back to the signup page if there is an error
-}));
+// app.post('/login', passport.authenticate('local-login', {
+//   successRedirect: '/profile', // redirect to the secure profile section
+//   failureRedirect: '/login' // redirect back to the signup page if there is an error
+// }));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
