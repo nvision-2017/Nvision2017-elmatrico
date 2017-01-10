@@ -64,6 +64,11 @@ router.get('/', function(req, res, next) {
   res.render('index', {server: server});
 });
 
+router.get('/user', function(req, res){
+  if (req.user) res.send(req.user)
+  else res.send(false);
+})
+
 router.get('/token', signinSSO, function(req, res){
   if (!req.user) {
     new User(req.userd).save(function(err){
@@ -129,7 +134,6 @@ router.get('/profile', isAuthenticated, function(req, res, next) {
 // });
 
 router.post('/uname', isAuthenticated, function(req, res, next) {
-  console.log(req.body)
   if (!req.body.uname) {
     req.session.wronguname = true
     res.redirect('/profile')
@@ -139,9 +143,10 @@ router.post('/uname', isAuthenticated, function(req, res, next) {
         req.session.wronguname = true
         res.redirect('/profile')
       } else {
-        User.findOne({emailId: req.user.emailId}, function(err, user) {
+        User.findOne({email: req.user.email}, function(err, user) {
           user.uname = req.body.uname;
           user.save(function(err) {
+            req.session.wronguname = false;
             res.redirect('/profile')
           })
         })
