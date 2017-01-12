@@ -1,3 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <title>Cryptex | &eta;vision 2017 | Elan 2017 | IIT Hyderabad</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <meta property="og:title" content="">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="">
+	<meta property="og:site_name" content="">
+	<meta property="og:description" content="">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900|Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/grayscale.css">
+
+<style>
+  .nav-logo {
+    width: 300px;
+  }
+  @media (max-width: 768px) {
+    .brand-heading {
+      margin-top: 3em;
+    }
+    .nav-logo {
+      width: 150px;
+    }
+    .navbar {
+      min-height: 15%;
+    }
+  }
+</style>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-89025632-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<header>
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
@@ -11,48 +64,16 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/leaderboard">Leaderboard</a></li>
+        <li><a href="https://www.facebook.com/nvision.IIThyderabad/?sk=app_202980683107053&app_data=Topics%3A0&__mref=message_bubble" target="_blank">Forum</a></li>
       </ul>
     </div><!--/.navbar-collapse -->
   </div>
 </div>
-
-<header>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-6">
-        <a href="/"><img src="img/font_new_recovered.png" alt="Logo"></a>
-      </div>
-      <div class="col-xs-6 signin text-right navbar-nav hidden-xs hidden-sm">
-        <a href="/leaderboard">Leaderboard</a>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-10 col-sm-offset-1 text-center">
-        <h1 class="wow fadeIn">{{level.name}}</h1>
-        <img src="{{level.image}}" alt="{{level.name}}" id="qimage"/>
-        <br>
-        <br>
-      </div>
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-          <div class="row">
-            <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-              <form role="form" method="post" action="/ans">
-                <div class="input-group">
-                <input type="text" name="answer" class="form-control" placeholder="Answer">
-                <span class="input-group-btn">
-                  <button type="submit" class="btn btn-primary btn-lg" type="button">Go!</button>
-                </span>
-              </div><!-- /input-group -->
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </header>
+
+<div class="container-fluid">
+  {{{body}}}
+</div>
 
 <!-- Javascript
 ================================================== -->
@@ -62,3 +83,8 @@
 <script src="js/wow.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
+
+
+
+</body>
+</html>

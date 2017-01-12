@@ -12,7 +12,7 @@ var secret = "Celestial Inquisition";
 
 var User = require('../models/user');
 
-var levels = require('../config/levels');
+var levels = require('../config/answers');
 
 var isAuthenticated = function(req, res, next) {
   if (req.user) {
@@ -155,39 +155,42 @@ router.post('/uname', isAuthenticated, function(req, res, next) {
   }
 });
 
-// router.get('/play', isAuthenticated, function(req, res, next) {
-//   if (!req.user.uname) {
-//     req.session.wronguname = true
-//     res.redirect('/profile')
-//   } else {
-//     User.findById(req.user.id, function(err, user) {
-//       var l = user.level;
-//       res.render('levels/' + levels[l].file, {level: levels[l]})
-//     });
-//   }
-// });
+router.get('/play', isAuthenticated, function(req, res, next) {
+  if (!req.user.uname) {
+    req.session.wronguname = true
+    res.redirect('/profile')
+  } else {
+    User.findById(req.user.id, function(err, user) {
+      var l = user.level;
+      if (l > 30) {
+        return res.render('levels/victory');
+      }
+      res.render('lvls/l' +l+'.hbs', {level: levels[l], layout: 'play'})
+    });
+  }
+});
 
-// router.post('/ans', isAuthenticated, function(req, res, next) {
-//   if (!req.user.uname) {
-//     req.session.wronguname = true
-//     res.redirect('/profile')
-//   } else {
-//     User.findById(req.user.id, function(err, user) {
-//       var l = user.level;
-//       if (req.body && req.body.answer && (levels[l].answer == req.body.answer.toLowerCase())) {
-//         user.level = l+1;
-//         user.save(function() {
-//           res.render('levels/success');
-//         })
-//       } else {
-//         if (req.body && req.body.answer) {
-//           fs.appendFile('level'+user.level+'.txt', req.body.answer+'\n', function(err){})
-//         }
-//         res.render('levels/failure');
-//       }
-//     })
-//   }
-// });
+router.post('/ans', isAuthenticated, function(req, res, next) {
+  if (!req.user.uname) {
+    req.session.wronguname = true
+    res.redirect('/profile')
+  } else {
+    User.findById(req.user.id, function(err, user) {
+      var l = user.level;
+      if (req.body && req.body.answer && (levels[l] == req.body.answer.toLowerCase())) {
+        user.level = l+1;
+        user.save(function() {
+          res.render('levels/success');
+        })
+      } else {
+        if (req.body && req.body.answer) {
+          // fs.appendFile('level'+user.level+'.txt', req.body.answer+'\n', function(err){})
+        }
+        res.render('levels/failure');
+      }
+    })
+  }
+});
 
 router.get('/test', function(req, res, next) {
   res.render('levels/victory');
