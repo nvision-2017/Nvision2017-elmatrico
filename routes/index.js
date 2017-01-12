@@ -155,6 +155,10 @@ router.post('/uname', isAuthenticated, function(req, res, next) {
   }
 });
 
+router.get('/q:q', function(req, res){
+  res.render('lvls/l'+req.params.q+'.hbs', {layout: 'play'});
+})
+
 router.get('/play', isAuthenticated, function(req, res, next) {
   if (!req.user.uname) {
     req.session.wronguname = true

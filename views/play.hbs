@@ -35,6 +35,9 @@
       min-height: 15%;
     }
   }
+  legend {
+    color: white;
+  }
 </style>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -51,19 +54,19 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
 <header>
-<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-inverse navbar-fixed-top" style="background: transparent">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="logo" href="/"><img src="img/font_new_recovered.png" alt="Logo"></a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand page-scroll" href="#page-top">
+            <img class="nav-logo" src="/img/merger-logo.png" alt="nvision logo"></img>
+        </a>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/leaderboard">Leaderboard</a></li>
+        <li><a href="/leaderboard" target="_blank">Leaderboard</a></li>
         <li><a href="https://www.facebook.com/nvision.IIThyderabad/?sk=app_202980683107053&app_data=Topics%3A0&__mref=message_bubble" target="_blank">Forum</a></li>
       </ul>
     </div><!--/.navbar-collapse -->
