@@ -67,7 +67,7 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/leaderboard" target="_blank">Leaderboard</a></li>
-        <li><a href="https://www.facebook.com/nvision.IIThyderabad/?sk=app_202980683107053&app_data=Topics%3A0&__mref=message_bubble" target="_blank">Forum</a></li>
+        <li><a href="http://forum.cryptex.nvision.org.in" target="_blank">Forum</a></li>
       </ul>
     </div><!--/.navbar-collapse -->
   </div>
@@ -78,6 +78,8 @@
   {{{body}}}
 </div>
 
+<div class="alert row col-md-6 col-md-offset-3 center" style="margin-top: 2em;"></div>
+
 <!-- Javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
@@ -87,7 +89,29 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
 
-
+<script>
+$(document).ready(function(){
+  $("input").on('focus', function(){
+    $(".alert").removeClass("alert-danger").html("");
+  });
+  $("form").submit(function(e){
+    e.preventDefault();
+    $.post($(this).attr('action'), {answer: $("input[name='answer']").val()}, function(data, sts){
+      if (sts == "success") {
+        if (data.correct) {
+          $('.alert').addClass('alert-success').html('Yo! Correct answer. <a href="/play" style="color: green; text-decoration: underline">Next Level</a>');
+        }
+        else if (data.url) {
+          location = data.url;
+        }
+        else {
+          $('.alert').addClass('alert-danger').html('Oops! You got ii wrong. Try again');
+        }
+      }
+    });
+  });
+});
+</script>
 
 </body>
 </html>

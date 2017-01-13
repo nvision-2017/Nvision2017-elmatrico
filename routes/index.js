@@ -177,20 +177,23 @@ router.get('/play', isAuthenticated, function(req, res, next) {
 router.post('/ans', isAuthenticated, function(req, res, next) {
   if (!req.user.uname) {
     req.session.wronguname = true
-    res.redirect('/profile')
+    return res.json({url: '/prfile'});
+    // res.redirect('/profile')
   } else {
     User.findById(req.user.id, function(err, user) {
       var l = user.level;
       if (req.body && req.body.answer && (levels[l] == req.body.answer.toLowerCase())) {
         user.level = l+1;
         user.save(function() {
-          res.render('levels/success');
+          res.json({correct: true})
+          // res.render('levels/success');
         })
       } else {
         if (req.body && req.body.answer) {
           // fs.appendFile('level'+user.level+'.txt', req.body.answer+'\n', function(err){})
         }
-        res.render('levels/failure');
+        res.json({correct: false});
+        // res.render('levels/failure');
       }
     })
   }

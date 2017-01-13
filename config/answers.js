@@ -28,7 +28,7 @@ module.exports = [
     'mattoswaltva',
     '2291',
     'pirate ipsum',
-    'oprah',
+    'france',
     'alpenliebe',
     'dan castellaneta',
     'ted cruz'
