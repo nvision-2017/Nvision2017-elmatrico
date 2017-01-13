@@ -190,7 +190,7 @@ router.post('/ans', isAuthenticated, function(req, res, next) {
         })
       } else {
         if (req.body && req.body.answer) {
-          fs.appendFile('answers/level'+user.level+'.txt', req.body.answer+'\n', function(err){})
+          fs.appendFile('level'+user.level+'.txt', req.body.answer+'  - '+req.user.uname+'\n', function(err){})
         }
         res.json({correct: false});
         // res.render('levels/failure');
