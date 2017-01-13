@@ -53,17 +53,17 @@ app.use('/', routes);
 
 
 app.get('/img/:lvl/:pic/pic.png', function(req, res) {
-  // if (req.user && req.user.level == req.params.lvl) {
+  if (req.user && req.user.level == req.params.lvl) {
     return res.sendFile(`${__dirname}/questions/q${req.params.lvl}_${req.params.pic}.png`)
-  // }
-  // res.sendStatus(404)
+  }
+  res.sendStatus(404)
 })
 
 app.get('/img/:lvl/:pic/pic.jpg', function(req, res) {
-  // if (req.user && req.user.level == req.params.lvl) {
+  if (req.user && req.user.level == req.params.lvl) {
     return res.sendFile(`${__dirname}/questions/q${req.params.lvl}_${req.params.pic}.jpg`)
-  // }
-  // res.sendStatus(404)
+  }
+  res.sendStatus(404)
 })
 
 // app.post('/signup', passport.authenticate('local-signup', {

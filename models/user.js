@@ -16,7 +16,7 @@ var userSchema = mongoose.Schema({
 	},
 	level: {
 		type: Number,
-		default: 1
+		default: 0
 	}
 });
 

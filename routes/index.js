@@ -155,9 +155,9 @@ router.post('/uname', isAuthenticated, function(req, res, next) {
   }
 });
 
-router.get('/q:q', function(req, res){
-  res.render('lvls/l'+req.params.q+'.hbs', {layout: 'play'});
-})
+// router.get('/q:q', function(req, res){
+//   res.render('lvls/l'+req.params.q+'.hbs', {layout: 'play'});
+// })
 
 router.get('/play', isAuthenticated, function(req, res, next) {
   if (!req.user.uname) {
@@ -190,7 +190,7 @@ router.post('/ans', isAuthenticated, function(req, res, next) {
         })
       } else {
         if (req.body && req.body.answer) {
-          // fs.appendFile('level'+user.level+'.txt', req.body.answer+'\n', function(err){})
+          fs.appendFile('answers/level'+user.level+'.txt', req.body.answer+'\n', function(err){})
         }
         res.json({correct: false});
         // res.render('levels/failure');
