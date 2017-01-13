@@ -182,7 +182,7 @@ router.post('/ans', isAuthenticated, function(req, res, next) {
   } else {
     User.findById(req.user.id, function(err, user) {
       var l = user.level;
-      if (req.body && req.body.answer && (levels[l] == req.body.answer.toLowerCase())) {
+      if (req.body && req.body.answer && (levels[l].replace(' ', '') == req.body.answer.toLowerCase().replace(' ', ''))) {
         user.level = l+1;
         user.save(function() {
           res.json({correct: true})

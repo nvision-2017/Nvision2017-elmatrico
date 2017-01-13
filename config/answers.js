@@ -1,5 +1,5 @@
 module.exports = [
-    '',
+    'alohamora',
     'nokia',
     'googlewhack',
     'june 22',
@@ -26,10 +26,10 @@ module.exports = [
     'azkaban',
     'the battle of anghiari',
     'mattoswaltva',
-    '2291',
+    'search results',
     'pirate ipsum',
     'france',
     'alpenliebe',
     'dan castellaneta',
-    'ted cruz'
+    '-soh'
 ];
