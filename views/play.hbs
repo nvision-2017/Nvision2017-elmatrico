@@ -100,6 +100,7 @@ $(document).ready(function(){
       if (sts == "success") {
         if (data.correct) {
           $('.alert').addClass('alert-success').html('Yo! Correct answer. <a href="/play" style="color: green; text-decoration: underline">Next Level</a>');
+          $('form').html('<br>');
         }
         else if (data.url) {
           location = data.url;
