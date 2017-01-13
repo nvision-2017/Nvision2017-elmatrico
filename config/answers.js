@@ -1,5 +1,5 @@
 module.exports = [
-    'alohamora',
+    'alohomora',
     'nokia',
     'googlewhack',
     'june 22',
