@@ -50,14 +50,14 @@ function signinSSO(req, res, next) {
     else next();
 }
 
-router.use(function(req, res, next){
-  if (req.session.userId) {
-    User.findById(req.session.userId).then(function(usr){
-      req.user = usr;
-      next();
-    }).catch(err=>next())
-  } else next();
-});
+// router.use(function(req, res, next){
+//   if (req.session.userId) {
+//     User.findById(req.session.userId).then(function(usr){
+//       req.user = usr;
+//       next();
+//     }).catch(err=>next())
+//   } else next();
+// });
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
