@@ -15,7 +15,7 @@ var RedisStore = require('connect-redis')(session);
 // require('./config/passport')(passport);
 
 var mongoose = require('mongoose');
-mongoose.connect("mongodb://localhost/onlinegame");
+mongoose.connect("mongodb://localhost/elmatrico");
 
 var routes = require('./routes/index');
 

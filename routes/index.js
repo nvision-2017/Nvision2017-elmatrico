@@ -133,74 +133,74 @@ router.get('/profile', isAuthenticated, function(req, res, next) {
 //   });
 // });
 
-router.post('/uname', isAuthenticated, function(req, res, next) {
-  if (!req.body.uname) {
-    req.session.wronguname = true
-    res.redirect('/profile')
-  } else {
-    User.findOne({uname: req.body.uname}, function(err, user) {
-      if (user) {
-        req.session.wronguname = true
-        res.redirect('/profile')
-      } else {
-        User.findOne({email: req.user.email}, function(err, user) {
-          user.uname = req.body.uname;
-          user.save(function(err) {
-            req.session.wronguname = false;
-            res.redirect('/profile')
-          })
-        })
-      }
-    })
-  }
-});
+// router.post('/uname', isAuthenticated, function(req, res, next) {
+//   if (!req.body.uname) {
+//     req.session.wronguname = true
+//     res.redirect('/profile')
+//   } else {
+//     User.findOne({uname: req.body.uname}, function(err, user) {
+//       if (user) {
+//         req.session.wronguname = true
+//         res.redirect('/profile')
+//       } else {
+//         User.findOne({email: req.user.email}, function(err, user) {
+//           user.uname = req.body.uname;
+//           user.save(function(err) {
+//             req.session.wronguname = false;
+//             res.redirect('/profile')
+//           })
+//         })
+//       }
+//     })
+//   }
+// });
 
 // router.get('/q:q', function(req, res){
 //   res.render('lvls/l'+req.params.q+'.hbs', {layout: 'play'});
 // })
 
-router.get('/play', isAuthenticated, function(req, res, next) {
-  if (!req.user.uname) {
-    req.session.wronguname = true
-    res.redirect('/profile')
-  } else {
-    User.findById(req.user.id, function(err, user) {
-      var l = user.level;
-      if (l > 30) {
-        return res.render('levels/victory');
-      }
-      res.render('lvls/l' +l+'.hbs', {level: levels[l], layout: 'play'})
-    });
-  }
-});
+// router.get('/play', isAuthenticated, function(req, res, next) {
+//   if (!req.user.uname) {
+//     req.session.wronguname = true
+//     res.redirect('/profile')
+//   } else {
+//     User.findById(req.user.id, function(err, user) {
+//       var l = user.level;
+//       if (l > 30) {
+//         return res.render('levels/victory');
+//       }
+//       res.render('lvls/l' +l+'.hbs', {level: levels[l], layout: 'play'})
+//     });
+//   }
+// });
 
-router.post('/ans', isAuthenticated, function(req, res, next) {
-  if (!req.user.uname) {
-    req.session.wronguname = true
-    return res.json({url: '/prfile'});
-    // res.redirect('/profile')
-  } else {
-    User.findById(req.user.id, function(err, user) {
-      var l = user.level;
-      if (req.body && req.body.answer && (levels[l].replace(' ', '') == req.body.answer.toLowerCase().replace(' ', ''))) {
-        user.level = l+1;
-        user.save(function() {
-          res.json({correct: true})
-          // res.render('levels/success');
-        })
-      } else {
-        if (req.body && req.body.answer) {
-          fs.appendFile('level'+user.level+'.txt', req.body.answer+'  - '+req.user.uname+'\n', function(err){})
-        }
-        res.json({correct: false});
-        // res.render('levels/failure');
-      }
-    })
-  }
-});
+// router.post('/ans', isAuthenticated, function(req, res, next) {
+//   if (!req.user.uname) {
+//     req.session.wronguname = true
+//     return res.json({url: '/prfile'});
+//     // res.redirect('/profile')
+//   } else {
+//     User.findById(req.user.id, function(err, user) {
+//       var l = user.level;
+//       if (req.body && req.body.answer && (levels[l].replace(' ', '') == req.body.answer.toLowerCase().replace(' ', ''))) {
+//         user.level = l+1;
+//         user.save(function() {
+//           res.json({correct: true})
+//           // res.render('levels/success');
+//         })
+//       } else {
+//         if (req.body && req.body.answer) {
+//           fs.appendFile('level'+user.level+'.txt', req.body.answer+'  - '+req.user.uname+'\n', function(err){})
+//         }
+//         res.json({correct: false});
+//         // res.render('levels/failure');
+//       }
+//     })
+//   }
+// });
 
-router.get('/test', function(req, res, next) {
-  res.render('levels/victory');
-});
+// router.get('/test', function(req, res, next) {
+//   res.render('levels/victory');
+// });
 
 module.exports = router;
