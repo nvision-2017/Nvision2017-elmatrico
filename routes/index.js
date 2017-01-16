@@ -50,14 +50,14 @@ function signinSSO(req, res, next) {
     else next();
 }
 
-// router.use(function(req, res, next){
-//   if (req.session.userId) {
-//     User.findById(req.session.userId).then(function(usr){
-//       req.user = usr;
-//       next();
-//     }).catch(err=>next())
-//   } else next();
-// });
+router.use(function(req, res, next){
+  if (req.session.userId) {
+    User.findById(req.session.userId).then(function(usr){
+      req.user = usr;
+      next();
+    }).catch(err=>next())
+  } else next();
+});
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -182,7 +182,7 @@ router.get('/profile', isAuthenticated, function(req, res, next) {
 //   } else {
 //     User.findById(req.user.id, function(err, user) {
 //       var l = user.level;
-//       if (req.body && req.body.answer && (levels[l].replace(' ', '') == req.body.answer.toLowerCase().replace(' ', ''))) {
+//       if (req.body && req.body.answer && (levels[l].replace(/\s/g, '') == req.body.answer.toLowerCase().replace(/\s/g, ''))) {
 //         user.level = l+1;
 //         user.save(function() {
 //           res.json({correct: true})
@@ -199,8 +199,8 @@ router.get('/profile', isAuthenticated, function(req, res, next) {
 //   }
 // });
 
-// router.get('/test', function(req, res, next) {
-//   res.render('levels/victory');
-// });
+router.get('/test', function(req, res, next) {
+  res.render('levels/victory');
+});
 
 module.exports = router;
