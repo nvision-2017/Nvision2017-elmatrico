@@ -115,7 +115,13 @@ router.get('/verified', function(req, res, next) {
 // });
 
 router.get('/profile', isAuthenticated, function(req, res, next) {
-  res.render('profile', {uname: req.user.uname, wronguname: req.session.wronguname})
+  var token = jwt.sign({user: req.session.userId}, tokenSecret, {expiresIn: 900});
+  console.log(token);
+  var msg = {};
+  if (req.query.message) {
+    msg = req.query
+  }
+  res.render('profile', {uname: req.user.uname, wronguname: req.session.wronguname, token: token, msg: msg})
 });
 
 // router.get('/verify/:token', function(req, res, next) {
