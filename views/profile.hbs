@@ -27,21 +27,24 @@
     </div>
     <!-- /.container -->
 </nav>
-
+<style type="text/css">
+</style>
 <!-- Profile Section -->
 <section id="profile" class="container content-section text-center">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
             <h2>Yo!</h2>
-            <p>The event starts on 17th January.</p>
+            <p>The event is on!</p>
+            <a href="/questions" class="form-btn">Check Questions</a>
             <p class="message">{{msg.message}}</p>
             <form action="https://nvision.org.in/elmatrico" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="answer">Upload :</label>
-                    <input type="file" class="form-control"  name="answer" id="answer">
+                    <label for="answer" style="font-size: 1.4em">Upload Answers</label>
+                    <strong>(Note: You can only submit once)</strong>
+                    <input type="file" class="form-control inputfile"  name="answer" id="answer" style="background: rgba(255,255,255,0.1);">
                 </div>
                 <input type="hidden"  value="{{token}}" name="token">
-                <button id="signup" class="form-btn" type="submit">Submit</button>
+                <button class="form-btn" type="submit">Submit</button>
             </form>
         </div>
     </div>
