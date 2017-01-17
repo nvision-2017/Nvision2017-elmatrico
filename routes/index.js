@@ -50,14 +50,14 @@ function signinSSO(req, res, next) {
     else next();
 }
 
-// router.use(function(req, res, next){
-//   if (req.session.userId) {
-//     User.findById(req.session.userId).then(function(usr){
-//       req.user = usr;
-//       next();
-//     }).catch(err=>next())
-//   } else next();
-// });
+router.use(function(req, res, next){
+  if (req.session.userId) {
+    User.findById(req.session.userId).then(function(usr){
+      req.user = usr;
+      next();
+    }).catch(err=>next())
+  } else next();
+});
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -115,13 +115,7 @@ router.get('/verified', function(req, res, next) {
 // });
 
 router.get('/profile', isAuthenticated, function(req, res, next) {
-  var token = jwt.sign({user: req.session.userId}, tokenSecret, {expiresIn: 900});
-  console.log(token);
-  var msg = {};
-  if (req.query.message) {
-    msg = req.query
-  }
-  res.render('profile', {uname: req.user.uname, wronguname: req.session.wronguname, token: token, msg: msg})
+  res.render('profile', {uname: req.user.uname, wronguname: req.session.wronguname})
 });
 
 // router.get('/verify/:token', function(req, res, next) {
@@ -206,7 +200,7 @@ router.get('/profile', isAuthenticated, function(req, res, next) {
 // });
 
 router.get('/test', function(req, res, next) {
-  res.render('play');
+  res.render('levels/victory');
 });
 
 module.exports = router;
