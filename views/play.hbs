@@ -38,6 +38,32 @@
   legend {
     color: white;
   }
+  body {
+      padding-top: 140px;
+    }
+    
+    #navbar-top {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2));
+    }
+
+    html {
+      overflow-x: hidden;
+    }
+
+    .event-nav a {
+      color: #fff;
+    }
+    
+    .event-nav a:hover {
+      /*background: url(/img/buried.png);*/
+      color: rgba(0, 77, 77, 1);
+      border-radius: 0;
+    }
+    
+    li.active a {
+      /*background: url(/img/buried.png);*/
+      border-radius: 0;
+    }
 </style>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -54,7 +80,7 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
 <header>
-<div class="navbar navbar-inverse navbar-fixed-top" style="background: transparent">
+<div class="navbar navbar-inverse navbar-fixed-top" style="background: #000; height: 15%;">
   <div class="container">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -66,8 +92,8 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/leaderboard" target="_blank">Leaderboard</a></li>
-        <li><a href="http://forum.cryptex.nvision.org.in" target="_blank">Forum</a></li>
+        <!-- <li><a href="/leaderboard" target="_blank">Leaderboard</a></li> -->
+        <!-- <li><a href="http://forum.cryptex.nvision.org.in" target="_blank">Forum</a></li> -->
       </ul>
     </div><!--/.navbar-collapse -->
   </div>
@@ -75,7 +101,153 @@
 </header>
 
 <div class="container-fluid">
-  {{{body}}}
+  
+  <div class="row">
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked animated bounceInLeft event-nav">
+          <li class="active"><a href="#tab-q1" data-toggle="pill">Question 1</a></li>
+          <li><a href="#tab-q2" data-toggle="pill">Question 2</a></li>
+          <li><a href="#tab-q3" data-toggle="pill">Question 3</a></li>
+          <li><a href="#tab-q4" data-toggle="pill">Question 4</a></li>
+          <li><a href="#tab-q5" data-toggle="pill">Question 5</a></li>
+          <li><a href="#tab-q6" data-toggle="pill">Question 6</a></li>
+          <li><a href="#tab-q7" data-toggle="pill">Question 7</a></li>
+          <li><a href="#tab-q8" data-toggle="pill">Question 8</a></li>
+          <li><a href="#tab-q9" data-toggle="pill">Question 9</a></li>
+          <li><a href="#tab-q10" data-toggle="pill">Question 10</a></li>
+          <li><a href="#tab-q11" data-toggle="pill">Question 11</a></li>
+          <li><a href="#tab-q12" data-toggle="pill">Question 12</a></li>
+        </ul>
+      </div>
+      <div class="col-md-9 custom-scrollbar" >
+        <div class="row tab-content custom-scrollbar">
+          
+          <div class="tab-pane active animated bounceInUp" id="tab-q1" style="font-size:20px;">
+            <h2>1: gold and bomb game[the Maze isn't meant for you] (difficult)</h2>
+            <p>The image provided to you has black walls and white background with yellow gold coin and black bombs.the image shown has a mine , we call a region mine when it is surrounded by black walls. the numbering of grid in actual image correspond to the numbering given in 4x4 grid below and we will be using this convention through out.</p>
+            <p>Problem statement: for the image provided, compute the following 
+              <ol>
+                <li>Largest mine in term of area</li>
+                <li>Largest mine which has maximum gold coin and minimum bombs.</li>
+                <li>Largest mine which has maximum bomb and minimum gold.</li>
+              </ol>
+            </p>
+
+            <p>
+              The above image is for training. We will use a different test case to verify your algorithm. one more image is given to check your algorithm.<br>
+              Example: consider the image given for training mine are [ [1, 2, 3, 6] , [4, 7, 8] , [5, 9, 10] , [11, 12] , [13, 14] , [15, 16] ]<br>
+              answer 1) format will be [1, 2, 4, 3]<br>
+              answer 2) will be [4, 7, 8]<br>
+              answer 3) will be [1, 2, 3, 6]
+            </p>
+
+          </div>
+
+          <div class="tab-pane animated bounceInUp" id="tab-q2" style="font-size:20px">
+            <h2>2: search in pi (difficult)</h2>
+            <p>Answer the following question</p>
+            <ol>
+              <li>Find the common factor of all the pixel of image</li>
+              <li>Form a new image which is 1 by common factor of original image</li>
+              <li>Find the starting point and ending point of new image in pi taking 3 is the first digit and 1 is the second digit in pi(neglect "." as one of the digit).</li>
+            </ol>
+          </div>
+
+          <div class="tab-pane animated bounceInUp" id="tab-q3" style="font-size:20px">
+            <h2>3: hack the sequence (moderate)</h2>
+            <p>Each word described below follow a certain pattern. Crack the pattern and write the code which do the same.<br>
+            The below sentence is for training the algorithm. we will use a different test case for verification of code.</p>
+            <p>"Introduceway away ittlelay anarchyway. Upsetway ethay establishedway orderway, andway everythingway ecomesbay aoschay. Iway amway anway agentway ofway aoschay..."</p>
+          </div>
+
+          <div class="tab-pane animated bounceInUp" id="tab-q4" style="font-size:20px">
+            <h2>4: find the matrix (moderate)</h2>
+            <p>Let a(n) and b(n) be two signal. lets consider one more signal c(n) which follow the below relation</p>
+            <p>c(n) = convolution( a(n), b(n) )</p>
+            <p>Consider one more matrix B which has the following property</p>
+            <p>B * a = c</p>
+            <p>Find matrix B and how B and b is related to each other<br>
+            a(n)=[1,2,3,4,5]'   b(n)=[6,7,8,9]'</p>
+          </div>
+
+          <div class="tab-pane animated bounceInUp" id="tab-q5" style="font-size:20px">
+            <h2>5: matrix manipulation (easy)</h2>
+            <p>Find a skew symmetrical matrix A which follow the below relationship</p>
+            <p>|A| = 28</p>
+            <p>Sum of first row is equal to 23</p>
+            <p>Sum of square of first coloumn is 45</p>
+          </div>
+
+          <div class="tab-pane animated bounceInUp" id="tab-q6" style="font-size:20px">
+            <h2>6: Remove the noise (difficult)</h2>
+            <p>The audio provided to you has unwanted noise added in to it . Remove the noise to form a noise free audio</p>
+            <p><a href="/q6audio.wav" target="_blank">Click here</a> for the audio</p>
+            <p>The noise has following properties :<br>
+sample rate is 22050 also denoted as Fs and the frequency is 220 cycles per second.</p>
+          </div>
+
+          <div class="tab-pane animated bounceInUp" id="tab-q7" style="font-size:20px">
+            <h2>7: error manipulation (moderate)</h2>
+            <p>Consider exp(x) and its taylor series expansion until n terms and let the difference between them is k. Write a script and find the minimum number of terms(n) you will use for approximation so that the error caused k is less than
+            <ol>
+              <li>0.003</li>
+              <li>0.0003</li>
+              <li>0.00003</li>
+            </ol>
+            </p>
+          </div>
+
+          <div class="tab-pane animated bounceInUp" id="tab-q8" style="font-size:20px">
+            <h2>8: prediction (moderate)</h2>
+            <p>The dataset is given to you is 4 dimension dataset.train your system to predict the output.<br>
+            Seperate dataset is given for the prediction.
+            </p>
+          </div>
+
+          <div class="tab-pane animated bounceInUp" id="tab-q9" style="font-size:20px">
+            <h2>9: differential equation (easy)</h2>
+            <p>Solve the below differential equation and plot the graph. </p>
+            <p>y′′ + y = tan(t) + e<sup>(3t)</sup> − 1</p>
+          </div>
+
+          <div class="tab-pane animated bounceInUp" id="tab-q10" style="font-size:20px">
+            <h2>10 (easy)</h2>
+            <p>Solve the system of linear equation given below</p>
+            <p>
+              x - 2y + 3z = 7<br>
+              2x + y + z = 4<br>
+              -3x + 2y - 2z = -10
+            </p>
+          </div>
+
+          <div class="tab-pane animated bounceInUp" id="tab-q11" style="font-size:20px">
+            <h2>11 (moderate)</h2>
+            <p>Write a simple function which do the following operation 
+            <ol>
+              <li>Draw a curve represented by (x<sup>2</sup>/a<sup>2</sup>) + (y<sup>2</sup>/b<sup>2</sup>) = 1</li>
+              <li>Rotate the curve by 45 degree and draw it</li>
+            </ol>
+              Where a is 3 and b is 4
+            </p>
+          </div>
+
+          <div class="tab-pane animated bounceInUp" id="tab-q12" style="font-size:20px">
+            <h2>12 (easy)</h2>
+            <p>Implement a simple function which do the following operation 
+            <ol>
+              <li>Given a sum k and order of matrix n. find the total number of matrix that can be formed</li>
+              <li>Find all the possible matrix</li>
+            </ol>
+              Where sum k denotes the sum of all the element of the matrix which is 15.<br>
+              Order is 3. Consider square matrix only.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
 </div>
 
 <div class="alert row col-md-6 col-md-offset-3 center" style="margin-top: 2em;"></div>
