@@ -34,33 +34,15 @@
         <div class="col-lg-8 col-lg-offset-2">
             <h2>Yo!</h2>
             <p>The event starts on 17th January.</p>
-            {{!--<p>The event is on.</p>
-            {{#if uname}}
-                <p class="lead wow fadeIn" data-wow-delay="0.5s">Hey, {{uname}}! Below are the rules of the game :D</p>
-                <a href="/play"><button type="submit" class="btn btn-primary btn-lg">Lets Hunt Some stars</button></a>
-            {{else}}
-                <p class="lead wow fadeIn" data-wow-delay="0.5s">Choose your username to get started</p>
-                <br />
-                <div class="row">
-                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-                  {{#if wronguname}}
-                    <div class="alert alert-danger" role="alert">Username has already been taken or is invalid, please try again</div>
-                  {{/if}}
-                  <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-                      <form role="form" method="post" action="/uname">
-                        <div class="form-group">
-                          <input type="text" name="uname" class="form-control" placeholder="Enter Username">
-                          <br>
-                          <button type="submit" id="submitButton" class="btn btn-primary btn-lg">Go!</button>
-                        </div>
-                      </form>
-                    </div>
-                  </div><!--End Form row-->
+            <p class="message">{{msg.message}}</p>
+            <form action="https://nvision.org.in/elmatrico" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="answer">Upload :</label>
+                    <input type="file" class="form-control"  name="answer" id="answer">
                 </div>
-              </div>
-            {{/if}}--}}
-
+                <input type="hidden"  value="{{token}}" name="token">
+                <button id="signup" class="form-btn" type="submit">Submit</button>
+            </form>
         </div>
     </div>
 </section>
@@ -93,3 +75,23 @@
         </div>
     </div>
 </section>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("form").hide();
+    $("form").submit(function(){
+        $(".message").html("Uploading...");
+    })
+    $.post('https://nvision.org.in/getElmatrico', {token : '{{token}}'}, function(data, sts){
+        console.log(data);
+        if (data.status === false) {
+            $("form").show();
+        }
+        if (data.status === true) {
+            $(".message").html("You have successfully answered.");
+        }
+    })
+    {{#if msg}}
+    
+    {{/if}}
+});
+</script>
